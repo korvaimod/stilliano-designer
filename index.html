@@ -3886,22 +3886,32 @@
       <div class="final__mockup" aria-label="Мокап коммерческого предложения">
         <img src="images/kp-mockup.webp" alt="Коммерческое предложение Stilliano - мокап документа" loading="lazy">
       </div>
-      <form class="form" onsubmit="event.preventDefault();">
+      <form class="form" action="https://formsubmit.co/diz@stilliano.ru" method="POST" data-lead-form>
+        <input type="hidden" name="_subject" value="Новая заявка с сайта diz.stilliano.ru">
+        <input type="hidden" name="_cc" value="korv.pro@yandex.ru">
+        <input type="hidden" name="_next" value="https://diz.stilliano.ru/thank-you.html">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="Форма" value="Финальная форма (Получить расчёт проекта)">
+        <input type="hidden" name="UTM source" data-utm="utm_source" value="">
+        <input type="hidden" name="UTM medium" data-utm="utm_medium" value="">
+        <input type="hidden" name="UTM campaign" data-utm="utm_campaign" value="">
+        <input type="hidden" name="UTM content" data-utm="utm_content" value="">
+        <input type="hidden" name="UTM term" data-utm="utm_term" value="">
+        <input type="hidden" name="Referrer" data-referrer value="">
+        <input type="hidden" name="Открыта" data-timestamp value="">
         <header class="form__heading">
           <h3>Заполните форму</h3>
           <p>для расчёта стоимости вашего проекта</p>
         </header>
         <label class="field">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 21c1.4-3.7 4-5.5 7-5.5s5.6 1.8 7 5.5"/></svg>
-          <input type="text" placeholder="Ваше имя" required>
+          <input type="text" name="Имя" placeholder="Ваше имя" required>
         </label>
         <label class="field">
           <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          <input type="tel" name="phone" placeholder="+7 (000) 000-00-00" required inputmode="tel" autocomplete="tel" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" minlength="18" data-phone-mask>
-        </label>
-        <label class="field field--file">
-          <svg viewBox="0 0 24 24"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg>
-          <span>Прикрепить проект - PDF, DWG, 3D, JPG</span>
+          <input type="tel" name="Телефон" placeholder="+7 (000) 000-00-00" required inputmode="tel" autocomplete="tel" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" minlength="18" data-phone-mask>
         </label>
         <button class="btn btn--primary" type="submit" style="justify-content: center;"><span>Получить расчёт проекта</span><span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></span></button>
         <label class="form__consent">
@@ -3990,20 +4000,28 @@
   <div class="callback-dialog__body">
     <h3 id="callback-dialog-title" data-callback-title>Оставьте контакт - менеджер перезвонит</h3>
     <p data-callback-sub>Свяжемся в течение рабочего дня и обсудим детали проекта.</p>
-    <form class="callback-dialog__form" data-callback-form onsubmit="event.preventDefault(); alert('Спасибо! Менеджер свяжется с вами в течение рабочего дня.'); this.reset(); document.getElementById('callback-dialog').close();">
-      <input type="hidden" name="context" data-callback-context value="">
+    <form class="callback-dialog__form" data-callback-form data-lead-form action="https://formsubmit.co/diz@stilliano.ru" method="POST">
+      <input type="hidden" name="_subject" value="Новая заявка с сайта diz.stilliano.ru">
+      <input type="hidden" name="_cc" value="korv.pro@yandex.ru">
+      <input type="hidden" name="_next" value="https://diz.stilliano.ru/thank-you.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="Форма" data-callback-form-label value="Обратный звонок">
+      <input type="hidden" name="UTM source" data-utm="utm_source" value="">
+      <input type="hidden" name="UTM medium" data-utm="utm_medium" value="">
+      <input type="hidden" name="UTM campaign" data-utm="utm_campaign" value="">
+      <input type="hidden" name="UTM content" data-utm="utm_content" value="">
+      <input type="hidden" name="UTM term" data-utm="utm_term" value="">
+      <input type="hidden" name="Referrer" data-referrer value="">
+      <input type="hidden" name="Открыта" data-timestamp value="">
       <label class="field">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M5 21c1.4-3.7 4-5.5 7-5.5s5.6 1.8 7 5.5"/></svg>
-        <input type="text" name="name" placeholder="Введите ваше имя" required>
+        <input type="text" name="Имя" placeholder="Введите ваше имя" required>
       </label>
       <label class="field">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-        <input type="tel" name="phone" placeholder="+7 (000) 000-00-00" required inputmode="tel" autocomplete="tel" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" minlength="18" data-phone-mask>
-      </label>
-      <label class="field field--file callback-dialog__file" data-callback-file>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg>
-        <span>Прикрепить проект - PDF, DWG, 3D, JPG</span>
-        <input type="file" name="project" hidden multiple accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.zip,.rar,.skp">
+        <input type="tel" name="Телефон" placeholder="+7 (000) 000-00-00" required inputmode="tel" autocomplete="tel" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" minlength="18" data-phone-mask>
       </label>
       <button class="btn btn--primary" type="submit" style="justify-content: center;">
         <span data-callback-cta>Отправить</span>
@@ -4033,14 +4051,28 @@
   <div class="catalog-dialog__body">
     <h3 id="catalog-dialog-title">Получите каталог реализованных проектов 2025 года</h3>
     <p>Ссылка на скачивание будет доступна сразу после заполнения формы.</p>
-    <form class="catalog-dialog__form" onsubmit="event.preventDefault();">
+    <form class="catalog-dialog__form" data-lead-form action="https://formsubmit.co/diz@stilliano.ru" method="POST">
+      <input type="hidden" name="_subject" value="Новая заявка с сайта diz.stilliano.ru">
+      <input type="hidden" name="_cc" value="korv.pro@yandex.ru">
+      <input type="hidden" name="_next" value="https://diz.stilliano.ru/thank-you.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="Форма" value="Скачать каталог проектов">
+      <input type="hidden" name="UTM source" data-utm="utm_source" value="">
+      <input type="hidden" name="UTM medium" data-utm="utm_medium" value="">
+      <input type="hidden" name="UTM campaign" data-utm="utm_campaign" value="">
+      <input type="hidden" name="UTM content" data-utm="utm_content" value="">
+      <input type="hidden" name="UTM term" data-utm="utm_term" value="">
+      <input type="hidden" name="Referrer" data-referrer value="">
+      <input type="hidden" name="Открыта" data-timestamp value="">
       <label class="field">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M5 21c1.4-3.7 4-5.5 7-5.5s5.6 1.8 7 5.5"/></svg>
-        <input type="text" name="name" placeholder="Введите ваше имя" required>
+        <input type="text" name="Имя" placeholder="Введите ваше имя" required>
       </label>
       <label class="field">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-        <input type="tel" name="phone" placeholder="+7 (000) 000-00-00" required inputmode="tel" autocomplete="tel" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" minlength="18" data-phone-mask>
+        <input type="tel" name="Телефон" placeholder="+7 (000) 000-00-00" required inputmode="tel" autocomplete="tel" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" minlength="18" data-phone-mask>
       </label>
       <button class="btn btn--primary" type="submit" style="justify-content: center;">
         <span>Получить каталог</span>
@@ -4133,6 +4165,40 @@
 </aside>
 
 <script>
+  // UTM-трекинг: сохраняем UTM/referrer из URL в sessionStorage при первом заходе
+  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    UTM_KEYS.forEach(k => {
+      const v = urlParams.get(k);
+      if (v) sessionStorage.setItem('lead_' + k, v);
+    });
+    if (document.referrer && !sessionStorage.getItem('lead_referrer')) {
+      sessionStorage.setItem('lead_referrer', document.referrer);
+    }
+  } catch (e) { /* sessionStorage disabled */ }
+
+  // Заполнение hidden полей в форме (UTM + referrer + timestamp) перед submit
+  const fillLeadFormHidden = (form) => {
+    if (!form) return;
+    form.querySelectorAll('[data-utm]').forEach(input => {
+      const key = input.dataset.utm;
+      try { input.value = sessionStorage.getItem('lead_' + key) || ''; } catch (e) {}
+    });
+    form.querySelectorAll('[data-referrer]').forEach(input => {
+      try { input.value = sessionStorage.getItem('lead_referrer') || ''; } catch (e) {}
+    });
+    form.querySelectorAll('[data-timestamp]').forEach(input => {
+      input.value = new Date().toLocaleString('ru-RU', { timeZone: 'Asia/Yekaterinburg' });
+    });
+  };
+  // Перед нативным submit любой lead-формы — заполнить hidden поля свежими значениями
+  document.querySelectorAll('[data-lead-form]').forEach(form => {
+    form.addEventListener('submit', () => fillLeadFormHidden(form));
+    // Заполняем сразу при загрузке для финальной формы (она не открывается через триггер)
+    fillLeadFormHidden(form);
+  });
+
   // Header scrolled state через IntersectionObserver-sentinel
   // (taste-skill §5.D: window.addEventListener('scroll', ...) banned)
   const header = document.querySelector('.site-header');
@@ -4295,17 +4361,17 @@
   const callbackDialog = document.getElementById('callback-dialog');
   if (callbackDialog) {
     const CALLBACK_CONTEXTS = {
-      partnership:     { title: 'Зафиксируем условия партнёрства',           sub: 'Менеджер перезвонит в течение рабочего дня и закрепит вашу ставку.',     cta: 'Зафиксировать',         file: false },
-      workflow:        { title: 'Передадим проект на расчёт',                sub: 'Заполните форму и мы перезвоним для уточнения деталей проекта.',        cta: 'Отправить проект',      file: true  },
-      materials:       { title: 'Подберём материалы под проект',              sub: 'Заполните форму и мы перезвоним для уточнения деталей проекта.',        cta: 'Подобрать материалы',   file: true  },
-      showroom:        { title: 'Запланируем встречу в шоуруме',              sub: 'Оставьте контакт, согласуем удобное время визита.',                     cta: 'Записаться',            file: false },
-      consultation:    { title: 'Получите консультацию',                      sub: 'Менеджер свяжется в течение рабочего дня и ответит на вопросы.',        cta: 'Получить консультацию', file: false },
-      quick_estimate:  { title: 'Подготовим расчёт стоимости проекта<br>за 1 рабочий день', sub: 'Заполните форму и мы перезвоним для уточнения деталей проекта.', cta: 'Получить расчёт проекта', file: true  },
+      partnership:     { title: 'Зафиксируем условия партнёрства',           sub: 'Менеджер перезвонит в течение рабочего дня и закрепит вашу ставку.',     cta: 'Зафиксировать',         file: false, formLabel: 'Зафиксировать условия партнёрства' },
+      workflow:        { title: 'Передадим проект на расчёт',                sub: 'Заполните форму и мы перезвоним для уточнения деталей проекта.',        cta: 'Отправить проект',      file: false, formLabel: 'Передать проект на расчёт' },
+      materials:       { title: 'Подберём материалы под проект',              sub: 'Заполните форму и мы перезвоним для уточнения деталей проекта.',        cta: 'Подобрать материалы',   file: false, formLabel: 'Подобрать материалы под проект' },
+      showroom:        { title: 'Запланируем встречу в шоуруме',              sub: 'Оставьте контакт, согласуем удобное время визита.',                     cta: 'Записаться',            file: false, formLabel: 'Запись в шоурум' },
+      consultation:    { title: 'Получите консультацию',                      sub: 'Менеджер свяжется в течение рабочего дня и ответит на вопросы.',        cta: 'Получить консультацию', file: false, formLabel: 'Получить консультацию' },
+      quick_estimate:  { title: 'Подготовим расчёт стоимости проекта<br>за 1 рабочий день', sub: 'Заполните форму и мы перезвоним для уточнения деталей проекта.', cta: 'Получить расчёт проекта', file: false, formLabel: 'Быстрый расчёт (mid-CTA)' },
     };
     const titleEl   = callbackDialog.querySelector('[data-callback-title]');
     const subEl     = callbackDialog.querySelector('[data-callback-sub]');
     const ctaEl     = callbackDialog.querySelector('[data-callback-cta]');
-    const contextEl = callbackDialog.querySelector('[data-callback-context]');
+    const formLabelEl = callbackDialog.querySelector('[data-callback-form-label]');
     const formEl    = callbackDialog.querySelector('[data-callback-form]');
     const closeBtn  = callbackDialog.querySelector('[data-callback-close]');
 
@@ -4318,8 +4384,9 @@
         titleEl.innerHTML = preset.title;
         subEl.textContent = preset.sub;
         ctaEl.textContent = preset.cta;
-        contextEl.value = ctx;
+        if (formLabelEl) formLabelEl.value = preset.formLabel || 'Обратный звонок';
         formEl.classList.toggle('has-file', !!preset.file);
+        fillLeadFormHidden(formEl);
         callbackDialog.showModal();
       });
     });
