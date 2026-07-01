@@ -3929,7 +3929,7 @@
           <svg viewBox="0 0 24 24"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg>
           <span data-uc-label>Прикрепить проект (не обязательно)</span>
         </button>
-        <input type="hidden" role="uploadcare-uploader" name="Файл проекта" data-multiple data-clearable data-lead-uploader value="">
+        <input type="hidden" role="uploadcare-uploader" name="Файл проекта" data-clearable data-lead-uploader value="">
         <input type="hidden" name="Форма" value="Финальная форма (Получить расчёт проекта)">
         <input type="hidden" name="URL страницы" data-page-url value="">
         <input type="hidden" name="Открыта" data-timestamp value="">
@@ -4044,7 +4044,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg>
         <span data-uc-label>Прикрепить проект (не обязательно)</span>
       </button>
-      <input type="hidden" role="uploadcare-uploader" name="Файл проекта" data-multiple data-clearable data-lead-uploader value="">
+      <input type="hidden" role="uploadcare-uploader" name="Файл проекта" data-clearable data-lead-uploader value="">
       <input type="hidden" name="Форма" data-callback-form-label value="Обратный звонок">
       <input type="hidden" name="URL страницы" data-page-url value="">
       <input type="hidden" name="Открыта" data-timestamp value="">
@@ -4238,13 +4238,15 @@
       const defaultText = label.textContent;
       const widget = uploadcare.Widget(input);
       widget.onUploadComplete(fileInfo => {
-        // Подставляем полный CDN URL вместо UUID - чтобы менеджер сразу видел ссылку для скачивания
-        if (fileInfo && fileInfo.cdnUrl) {
+        // Прямая ссылка на файл с именем через стандартный ucarecdn.com
+        // (не рандомный edge-домен и не group-обёртка) - чтобы клик по ссылке в письме
+        // сразу скачивал файл, а не открывал страницу-заглушку с UUID.
+        if (fileInfo && fileInfo.uuid && fileInfo.name) {
+          input.value = `https://ucarecdn.com/${fileInfo.uuid}/${encodeURIComponent(fileInfo.name)}`;
+        } else if (fileInfo && fileInfo.cdnUrl) {
           input.value = fileInfo.cdnUrl;
         }
-        if (fileInfo && fileInfo.count > 1) {
-          label.textContent = `Прикреплено ${fileInfo.count} файла(ов) - нажмите чтобы изменить`;
-        } else if (fileInfo && fileInfo.name) {
+        if (fileInfo && fileInfo.name) {
           label.textContent = `${fileInfo.name} - нажмите чтобы изменить`;
         }
       });
