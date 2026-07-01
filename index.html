@@ -1285,8 +1285,8 @@
     position: absolute;
     left: 0; right: 0; bottom: 0;
     z-index: 2;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    justify-content: center;
     gap: 8px;
     padding: 70px 16px 16px;
   }
@@ -1303,6 +1303,7 @@
     pointer-events: none;
   }
   .production__photo-thumb {
+    width: 80px;
     aspect-ratio: 1 / 1;
     padding: 0;
     border: 2px solid transparent;
@@ -2074,8 +2075,8 @@
     position: absolute;
     left: 0; right: 0; bottom: 0;
     z-index: 2;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    justify-content: center;
     gap: 8px;
     padding: 70px 16px 16px;
   }
@@ -2092,6 +2093,7 @@
     pointer-events: none;
   }
   .showroom__photo-thumb {
+    width: 80px;
     aspect-ratio: 1 / 1;
     padding: 0;
     border: 2px solid transparent;
