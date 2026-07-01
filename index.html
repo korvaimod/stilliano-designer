@@ -79,13 +79,6 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script>
-  // Uploadcare - настройки виджета (загрузка файлов проектов в облако, ссылка идёт в email)
-  UPLOADCARE_PUBLIC_KEY = 'fa567acb1b08f610d511';
-  UPLOADCARE_LOCALE = 'ru';
-  UPLOADCARE_TABS = 'file';
-</script>
-<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8" async></script>
-<script>
   // Dialog polyfill подключаем СТРОГО условно - только если браузер не знает <dialog>.
   // CSS polyfill содержит position:absolute для всех dialog и ломает нативный top-layer.
   if (!('HTMLDialogElement' in window)) {
@@ -2248,22 +2241,6 @@
     font-family: inherit; font-size: 14px;
     resize: none;
   }
-  .field--file {
-    padding: 12px 18px;
-    color: var(--ink-3);
-    cursor: pointer;
-  }
-  button.field--file {
-    font: inherit;
-    text-align: left;
-    width: 100%;
-    background: var(--bg);
-    color: var(--ink-3);
-  }
-  button.field--file:hover { border-color: var(--accent-deep); color: var(--ink); }
-  button.field--file [data-uc-label] { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  /* Скрываем встроенный UI виджета Uploadcare - используем свой trigger */
-  .uploadcare--widget { display: none !important; }
   .form__hint { font-size: 12px; color: var(--ink-3); margin-top: 4px; }
   .form__consent {
     display: flex; align-items: flex-start; gap: 10px;
@@ -3925,11 +3902,6 @@
           <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
           <input type="tel" name="Телефон" placeholder="+7 (000) 000-00-00" required inputmode="tel" autocomplete="tel" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" minlength="18" data-phone-mask>
         </label>
-        <button type="button" class="field field--file" data-uc-trigger>
-          <svg viewBox="0 0 24 24"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg>
-          <span data-uc-label>Прикрепить проект (не обязательно)</span>
-        </button>
-        <input type="hidden" role="uploadcare-uploader" name="Файл проекта" data-clearable data-lead-uploader value="">
         <input type="hidden" name="Форма" value="Финальная форма (Получить расчёт проекта)">
         <input type="hidden" name="URL страницы" data-page-url value="">
         <input type="hidden" name="Открыта" data-timestamp value="">
@@ -4040,11 +4012,6 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
         <input type="tel" name="Телефон" placeholder="+7 (000) 000-00-00" required inputmode="tel" autocomplete="tel" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" minlength="18" data-phone-mask>
       </label>
-      <button type="button" class="field field--file" data-uc-trigger>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg>
-        <span data-uc-label>Прикрепить проект (не обязательно)</span>
-      </button>
-      <input type="hidden" role="uploadcare-uploader" name="Файл проекта" data-clearable data-lead-uploader value="">
       <input type="hidden" name="Форма" data-callback-form-label value="Обратный звонок">
       <input type="hidden" name="URL страницы" data-page-url value="">
       <input type="hidden" name="Открыта" data-timestamp value="">
@@ -4224,66 +4191,6 @@
     form.addEventListener('submit', () => fillLeadFormHidden(form));
     // Заполняем сразу при загрузке для финальной формы (она не открывается через триггер)
     fillLeadFormHidden(form);
-  });
-
-  // Uploadcare integration: клик по label → открыть виджет → показать имя файла
-  const initUploadcare = () => {
-    if (typeof uploadcare === 'undefined') return;
-    document.querySelectorAll('[data-lead-uploader]').forEach(input => {
-      const form = input.closest('form');
-      if (!form) return;
-      const trigger = form.querySelector('[data-uc-trigger]');
-      const label = form.querySelector('[data-uc-label]');
-      if (!trigger || !label) return;
-      const defaultText = label.textContent;
-      const widget = uploadcare.Widget(input);
-      widget.onUploadComplete(fileInfo => {
-        // Прямая ссылка на файл с именем через стандартный ucarecdn.com
-        // (не рандомный edge-домен и не group-обёртка) - чтобы клик по ссылке в письме
-        // сразу скачивал файл, а не открывал страницу-заглушку с UUID.
-        if (fileInfo && fileInfo.uuid && fileInfo.name) {
-          input.value = `https://ucarecdn.com/${fileInfo.uuid}/${encodeURIComponent(fileInfo.name)}`;
-        } else if (fileInfo && fileInfo.cdnUrl) {
-          input.value = fileInfo.cdnUrl;
-        }
-        if (fileInfo && fileInfo.name) {
-          label.textContent = `${fileInfo.name} - нажмите чтобы изменить`;
-        }
-      });
-      widget.onChange(fileInfo => {
-        if (!fileInfo) {
-          label.textContent = defaultText;
-          input.value = '';
-        }
-      });
-      trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        // Если форма внутри native <dialog>.showModal() - тот в top-layer перекрывает
-        // Uploadcare overlay. Временно закрываем dialog, после закрытия виджета - возвращаем.
-        const parentDialog = form.closest('dialog');
-        const wasOpen = parentDialog && parentDialog.hasAttribute('open');
-        if (wasOpen) parentDialog.close();
-        const restore = () => {
-          if (wasOpen && parentDialog && !parentDialog.hasAttribute('open')) {
-            try { parentDialog.showModal(); } catch (err) {}
-          }
-        };
-        const dlgPromise = widget.openDialog();
-        if (dlgPromise && typeof dlgPromise.done === 'function') {
-          dlgPromise.done(restore).fail(restore);
-        } else {
-          setTimeout(restore, 100);
-        }
-      });
-    });
-  };
-  // Uploadcare загружается async - ждём готовности
-  if (typeof uploadcare !== 'undefined') initUploadcare();
-  else document.addEventListener('DOMContentLoaded', () => {
-    const check = setInterval(() => {
-      if (typeof uploadcare !== 'undefined') { clearInterval(check); initUploadcare(); }
-    }, 100);
-    setTimeout(() => clearInterval(check), 10000);
   });
 
   // Header scrolled state через IntersectionObserver-sentinel
