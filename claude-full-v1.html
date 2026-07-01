@@ -82,6 +82,7 @@
   // Uploadcare - настройки виджета (загрузка файлов проектов в облако, ссылка идёт в email)
   UPLOADCARE_PUBLIC_KEY = 'fa567acb1b08f610d511';
   UPLOADCARE_LOCALE = 'ru';
+  UPLOADCARE_TABS = 'file';
 </script>
 <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8" async></script>
 <script>
@@ -4255,7 +4256,22 @@
       });
       trigger.addEventListener('click', (e) => {
         e.preventDefault();
-        widget.openDialog();
+        // Если форма внутри native <dialog>.showModal() - тот в top-layer перекрывает
+        // Uploadcare overlay. Временно закрываем dialog, после закрытия виджета - возвращаем.
+        const parentDialog = form.closest('dialog');
+        const wasOpen = parentDialog && parentDialog.hasAttribute('open');
+        if (wasOpen) parentDialog.close();
+        const restore = () => {
+          if (wasOpen && parentDialog && !parentDialog.hasAttribute('open')) {
+            try { parentDialog.showModal(); } catch (err) {}
+          }
+        };
+        const dlgPromise = widget.openDialog();
+        if (dlgPromise && typeof dlgPromise.done === 'function') {
+          dlgPromise.done(restore).fail(restore);
+        } else {
+          setTimeout(restore, 100);
+        }
       });
     });
   };
